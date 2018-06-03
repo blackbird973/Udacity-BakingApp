@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:id="@+id/scroll_detail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <LinearLayout
+        android:id="@+id/detail_llayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+
+            android:textColor="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:textSize="40sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/step_id_textview"
+            android:padding="5dp"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:contentDescription="@string/no_images_available"
+            android:id="@+id/image_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="252dp" />
+
+        <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            android:layout_height="252dp"
+            android:focusable="true" />
+
+        <TextView
+            android:padding="5dp"
+            android:textColor="@color/colorPrimary"
+
+            android:gravity="center"
+            android:id="@+id/detailed_textview"
+            android:textSize="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>

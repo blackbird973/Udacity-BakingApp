@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/degrade"
+    tools:context="yohan.bakingapp.com.bakingapp_nanodegree.RecipeItemActivity">
+
+    <TextView
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/scroll_down_to_see_the_rest_of_the_ingredients"
+        android:textColor="@color/blue_magic"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:background="@drawable/card_detail"
+        android:elevation="10dp"
+        android:layout_marginBottom="10dp"
+        />
+
+    <ScrollView
+        android:fadeScrollbars="false"
+        android:scrollbars="none"
+        android:id="@+id/ingredients_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        >
+
+        <FrameLayout
+            android:name="yohan.bakingapp.com.bakingapp_nanodegree.IngredientsFragment"
+            android:background="@color/colorAccent"
+            android:id="@+id/ingredients_fragment_holder"
+            android:layout_width="match_parent"
+            android:layout_height="265dp"/>
+
+    </ScrollView>
+
+    <TextView
+        android:textStyle="bold"
+        android:text="@string/step_by_step_instructions"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:textColor="@color/blue_magic"
+        android:layout_width="match_parent"
+        android:background="@drawable/card_detail"
+        android:elevation="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+
+
+
+    <FrameLayout
+        android:name="yohan.bakingapp.com.bakingapp_nanodegree.StepsFragment"
+
+        android:id="@+id/steps_fragment_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"/>
+
+
+</LinearLayout>
