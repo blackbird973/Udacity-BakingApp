@@ -3,6 +3,7 @@
     android:id="@+id/scroll_detail"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
 
@@ -10,11 +11,12 @@
         android:id="@+id/detail_llayout"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:background="@drawable/degrade">
 
         <TextView
 
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/white"
             android:gravity="center"
             android:textSize="40sp"
             android:layout_width="match_parent"
@@ -37,7 +39,7 @@
 
         <TextView
             android:padding="5dp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/white"
 
             android:gravity="center"
             android:id="@+id/detailed_textview"

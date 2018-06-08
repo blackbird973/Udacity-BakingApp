@@ -7,7 +7,7 @@
     android:padding="5dp"
     android:clickable="true"
     android:focusable="true"
-    app:cardBackgroundColor="@color/degrade_top"
+    app:cardBackgroundColor="@color/white"
     app:cardElevation="5dp"
     app:cardMaxElevation="5dp"
     app:cardCornerRadius="5dp">
@@ -35,7 +35,7 @@
             />
 
         <TextView
-            android:textColor="@color/white"
+            android:textColor="@color/blue_magic"
             android:id="@+id/steps_id"
             android:gravity="center"
             android:layout_width="wrap_content"

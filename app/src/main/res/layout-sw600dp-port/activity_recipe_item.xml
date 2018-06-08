@@ -59,7 +59,7 @@
 
         <FrameLayout
             android:name="yohan.bakingapp.com.bakingapp_nanodegree.StepsFragment"
-            android:background="@color/colorPrimaryDark"
+
             android:id="@+id/steps_fragment_holder"
             android:layout_width="match_parent"
             android:layout_height="210dp"/>

@@ -5,24 +5,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+
     tools:context="yohan.bakingapp.com.bakingapp_nanodegree.RecipeListActivity"
     >
 
     <LinearLayout
         android:id="@+id/list_llayout"
-        android:background="@color/colorAccent"
+
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <fragment
-            android:name="yohan.bakingapp.com.bakingapp_nanodegree.RecipeFragment"
-            android:background="@color/colorAccent"
             android:id="@+id/recipe_list_framelayout"
+            android:name="yohan.bakingapp.com.bakingapp_nanodegree.RecipeFragment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </fragment>
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"></fragment>
 
     </LinearLayout>
 </ScrollView>
