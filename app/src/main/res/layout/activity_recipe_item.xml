@@ -10,8 +10,8 @@
     <TextView
         android:padding="8dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/scroll_down_to_see_the_rest_of_the_ingredients"
+        android:layout_height="50dp"
+        android:text="@string/ingredients_label"
         android:textColor="@color/blue_magic"
         android:textStyle="bold"
         android:textSize="25sp"
@@ -40,14 +40,14 @@
 
     <TextView
         android:textStyle="bold"
-        android:text="@string/step_by_step_instructions"
+        android:text="@string/instructions_label"
         android:textSize="25sp"
         android:gravity="center"
         android:textColor="@color/blue_magic"
         android:layout_width="match_parent"
         android:background="@drawable/card_detail"
         android:elevation="10dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginTop="10dp"/>
 
 
@@ -59,7 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="10dp"/>
 
 
 </LinearLayout>

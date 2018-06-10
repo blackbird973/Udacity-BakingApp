@@ -11,4 +11,8 @@
     <stroke
         android:width="2dp"
         android:color="@color/blue_magic"/>
+    <gradient
+        android:endColor="@color/degrade_bottom"
+        android:startColor="@color/degrade_top"
+        android:angle="270" />
 </shape>

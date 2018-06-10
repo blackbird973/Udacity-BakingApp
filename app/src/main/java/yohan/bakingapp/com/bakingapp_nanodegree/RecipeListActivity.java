@@ -4,12 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import yohan.bakingapp.com.bakingapp_nanodegree.R;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 /**
@@ -25,9 +23,9 @@ public class RecipeListActivity extends AppCompatActivity {
 
         if (!isOnline()) {
             new AlertDialog.Builder(this)
-                    .setTitle("No connexion")
+                    .setTitle(R.string.no_internet_text)
                     .setCancelable(false)
-                    .setMessage("You seem to have lost your connection, please connect and try again!")
+                    .setMessage("Oops, the internet connection was lost, please try again by clicking on the button")
                     .setIcon(R.drawable.ic_signal_cellular_connected_no_internet_0_bar_black_24dp)
                     .setPositiveButton("Go to Connection Settings", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {

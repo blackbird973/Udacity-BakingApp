@@ -29,7 +29,8 @@
             android:contentDescription="@string/no_images_available"
             android:id="@+id/image_thumbnail"
             android:layout_width="match_parent"
-            android:layout_height="252dp" />
+            android:layout_height="252dp"
+            android:layout_marginStart="25dp"/>
 
         <com.google.android.exoplayer2.ui.SimpleExoPlayerView
             android:id="@+id/video_view"
@@ -38,14 +39,16 @@
             android:focusable="true" />
 
         <TextView
+            android:layout_marginTop="5dp"
             android:padding="5dp"
-            android:textColor="@color/white"
-
-            android:gravity="center"
+            android:textColor="@color/blue_magic"
+            android:background="@drawable/card_detail"
+            android:gravity="left"
             android:id="@+id/detailed_textview"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            />
 
     </LinearLayout>
 </ScrollView>

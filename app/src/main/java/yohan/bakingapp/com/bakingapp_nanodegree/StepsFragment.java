@@ -3,8 +3,6 @@ package yohan.bakingapp.com.bakingapp_nanodegree;
 import android.content.Intent;
 import android.content.res.Configuration;
 
-import yohan.bakingapp.com.bakingapp_nanodegree.R;
-import yohan.bakingapp.com.bakingapp_nanodegree.Steps;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
@@ -18,7 +16,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -85,7 +82,7 @@ public class StepsFragment extends Fragment implements StepsAdapter.StepsListene
     @Override
     public void onStepsItemClick(Steps steps) {
 
-        boolean tabletSize = getResources().getBoolean(R.bool.isTablet);
+        boolean tabletSize = getResources().getBoolean(R.bool.tablet_case);
 
         if(!tabletSize)
         {
