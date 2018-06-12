@@ -30,7 +30,7 @@ import com.squareup.picasso.Picasso;
  * Created by Yohan on 21/05/2018.
  */
 
-public class DetailedStepsFragment extends Fragment{
+public class Fragment_Detailed_Steps extends Fragment{
     public static final String PLAYBACK_POSITION = "playback_position";
     public static final String PLAY_WHEN_READY = "play_when_ready";
 
@@ -41,7 +41,7 @@ public class DetailedStepsFragment extends Fragment{
     private SimpleExoPlayerView simpleExoPlayerView;
     private String videoURL;
 
-    public DetailedStepsFragment() { }
+    public Fragment_Detailed_Steps() { }
 
     @Nullable
     @Override

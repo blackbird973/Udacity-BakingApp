@@ -6,8 +6,6 @@ package yohan.bakingapp.com.bakingapp_nanodegree;
 
 
 import android.content.Context;
-import yohan.bakingapp.com.bakingapp_nanodegree.R;
-import yohan.bakingapp.com.bakingapp_nanodegree.Recipe;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,12 +18,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder> {
+public class Adapter_Recipe extends RecyclerView.Adapter<Adapter_Recipe.RecipeViewHolder> {
     private List<Recipe> recipesList;
     private final Context mContext;
     private final RecipeClickListener listener;
 
-    public RecipeAdapter(Context context, RecipeClickListener listener){
+    public Adapter_Recipe(Context context, RecipeClickListener listener){
         recipesList = new ArrayList<>();
         mContext = context;
         this.listener = listener;
@@ -39,7 +37,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
 
     @Override
     public RecipeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.recipe_item, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_recipe, parent, false);
         return new RecipeViewHolder(view);
     }
 

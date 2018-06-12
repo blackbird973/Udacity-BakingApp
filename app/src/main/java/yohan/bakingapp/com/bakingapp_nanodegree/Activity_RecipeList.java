@@ -1,32 +1,31 @@
 package yohan.bakingapp.com.bakingapp_nanodegree;
 
+import android.support.v7.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Bundle;
 import android.provider.Settings;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
 /**
- * Created by Yohan on 21/05/2018.
+ * Created by Yohan on 20/05/2018.
  */
 
-public class DetailedStepsActivity extends AppCompatActivity {
+public class Activity_RecipeList extends AppCompatActivity {
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_steps_fragment);
+        setContentView(R.layout.activity_recipe_list);
 
         if (!isOnline()) {
             new AlertDialog.Builder(this)
                     .setTitle(R.string.no_internet_text)
                     .setCancelable(false)
-                    .setMessage("Oops, internet signal was lost, please try again")
+                    .setMessage("Oops, the internet connection was lost, please try again by clicking on the button")
                     .setIcon(R.drawable.ic_signal_cellular_connected_no_internet_0_bar_black_24dp)
                     .setPositiveButton("Go to Connection Settings", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
@@ -38,21 +37,7 @@ public class DetailedStepsActivity extends AppCompatActivity {
                         }
                     }).show();
         }
-
-        if (savedInstanceState != null) {
-            return;
-        }
-
-        DetailedStepsFragment detailedStepsFragment = new DetailedStepsFragment();
-        detailedStepsFragment.setArguments(getIntent().getBundleExtra("steps"));
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .add(R.id.recipe_step_detail_framelayout, detailedStepsFragment)
-                .commit();
     }
-
-
 
     private boolean isOnline() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -60,4 +45,7 @@ public class DetailedStepsActivity extends AppCompatActivity {
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         return netInfo != null && netInfo.isConnected();
     }
+
+
 }
+

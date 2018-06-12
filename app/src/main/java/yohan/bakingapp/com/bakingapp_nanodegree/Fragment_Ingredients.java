@@ -19,7 +19,7 @@ import java.util.List;
  * Created by Yohan on 21/05/2018.
  */
 
-public class IngredientsFragment extends Fragment {
+public class Fragment_Ingredients extends Fragment {
 
     private RecyclerView recyclerView;
     private GridLayoutManager layoutManager;
@@ -32,19 +32,19 @@ public class IngredientsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.ingredients_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_ingredients, container, false);
 
         recyclerView = rootView.findViewById(R.id.recipe_ingredients_recycler_view);
         layoutManager = new GridLayoutManager(getContext(), 1);
-        IngredientsAdapter ingredientsAdapter = new IngredientsAdapter(getContext());
+        Adapter_Ingredients adapterIngredients = new Adapter_Ingredients(getContext());
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(ingredientsAdapter);
+        recyclerView.setAdapter(adapterIngredients);
         List<Ingredients> ingredients;
 
         Bundle bundle = this.getArguments();
         if (bundle != null) {
             ingredients = bundle.getParcelableArrayList("ingredients");
-            ingredientsAdapter.setIngredientsList(ingredients);
+            adapterIngredients.setIngredientsList(ingredients);
         }
 
         return rootView;

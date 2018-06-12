@@ -16,14 +16,15 @@
 
         <TextView
 
-            android:textColor="@color/white"
+            android:textColor="@color/blue_magic"
             android:gravity="center"
             android:textSize="40sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/step_id_textview"
             android:padding="5dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:background="@drawable/card_detail"/>
 
         <ImageView
             android:contentDescription="@string/no_images_available"

@@ -35,7 +35,7 @@ public class StepsFragment extends Fragment implements StepsAdapter.StepsListene
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.steps_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_steps, container, false);
 
         recyclerView = rootView.findViewById(R.id.recipe_steps_recycler_view);
         layoutManager = new GridLayoutManager(getContext(), 1);
@@ -86,7 +86,7 @@ public class StepsFragment extends Fragment implements StepsAdapter.StepsListene
 
         if(!tabletSize)
         {
-            Intent intent = new Intent(getActivity().getApplicationContext(), DetailedStepsActivity.class);
+            Intent intent = new Intent(getActivity().getApplicationContext(), Activity_Detailed_Steps.class);
             Bundle bundle2 = new Bundle();
             bundle2.putParcelable("steps", steps);
             intent.putExtra("steps", bundle2);
@@ -96,12 +96,12 @@ public class StepsFragment extends Fragment implements StepsAdapter.StepsListene
 
             FragmentManager fragmentManager = this.getFragmentManager();
 
-            DetailedStepsFragment detailedStepsFragment = new DetailedStepsFragment();
+            Fragment_Detailed_Steps fragmentDetailedSteps = new Fragment_Detailed_Steps();
             Bundle bundle = new Bundle();
             bundle.putParcelable("steps",steps);
-            detailedStepsFragment.setArguments(bundle);
+            fragmentDetailedSteps.setArguments(bundle);
             fragmentManager.beginTransaction()
-                    .replace(R.id.detailed_steps_fragment_holder, detailedStepsFragment)
+                    .replace(R.id.detailed_steps_fragment_holder, fragmentDetailedSteps)
                     .commit();
 
         }

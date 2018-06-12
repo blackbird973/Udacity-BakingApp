@@ -18,7 +18,7 @@ import java.util.List;
  * Created by Yohan on 20/05/2018.
  */
 
-public class RecipeItemActivity extends AppCompatActivity {
+public class Activity_RecipeItem extends AppCompatActivity {
     private List<Ingredients> ingredients;
     private List<Steps> steps;
     private Boolean mTwoPane;
@@ -29,7 +29,7 @@ public class RecipeItemActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recipe_item);
+        setContentView(R.layout.activity_item_recipe);
 
 
 
@@ -51,15 +51,15 @@ public class RecipeItemActivity extends AppCompatActivity {
 
         if (findViewById(R.id.linear_layout_tablet_holder) != null) {
             if (savedInstanceState == null) {
-                DetailedStepsFragment detailedStepsFragment = new DetailedStepsFragment();
+                Fragment_Detailed_Steps fragmentDetailedSteps = new Fragment_Detailed_Steps();
                 Bundle bundle = new Bundle();
                 bundle.putParcelable("steps", steps.get(0));
-                detailedStepsFragment.setArguments(bundle);
+                fragmentDetailedSteps.setArguments(bundle);
 
                 FragmentManager fragmentManager = getSupportFragmentManager();
 
                 fragmentManager.beginTransaction()
-                        .add(R.id.detailed_steps_fragment_holder, detailedStepsFragment)
+                        .add(R.id.detailed_steps_fragment_holder, fragmentDetailedSteps)
                         .commit();
             }
             mTwoPane = true;
@@ -70,10 +70,10 @@ public class RecipeItemActivity extends AppCompatActivity {
 
 
 
-        IngredientsFragment ingredientsFragment = new IngredientsFragment();
+        Fragment_Ingredients fragmentIngredients = new Fragment_Ingredients();
         Bundle bundle = new Bundle();
         bundle.putParcelableArrayList("ingredients", (ArrayList<Ingredients>)ingredients);
-        ingredientsFragment.setArguments(bundle);
+        fragmentIngredients.setArguments(bundle);
 
         StepsFragment stepsFragment = new StepsFragment();
         Bundle bundle2 = new Bundle();
@@ -83,7 +83,7 @@ public class RecipeItemActivity extends AppCompatActivity {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .add(R.id.ingredients_fragment_holder, ingredientsFragment)
+                .add(R.id.ingredients_fragment_holder, fragmentIngredients)
                 .add(R.id.steps_fragment_holder, stepsFragment)
                 .commit();
 

@@ -4,8 +4,6 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
-import yohan.bakingapp.com.bakingapp_nanodegree.R;
-import yohan.bakingapp.com.bakingapp_nanodegree.Steps;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -34,7 +32,7 @@ public class StepsAdapter extends RecyclerView.Adapter<StepsAdapter.StepsViewHol
 
     @Override
     public StepsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.steps_item, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_steps, parent, false);
         return new StepsViewHolder(view);
     }
 

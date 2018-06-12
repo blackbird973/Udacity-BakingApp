@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/degrade"
-    tools:context="yohan.bakingapp.com.bakingapp_nanodegree.RecipeItemActivity">
+    tools:context="yohan.bakingapp.com.bakingapp_nanodegree.Activity_RecipeItem">
 
     <TextView
         android:padding="8dp"

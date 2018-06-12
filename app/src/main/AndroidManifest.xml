@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".RecipeListActivity">
+        <activity android:name=".Activity_RecipeList">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,12 +21,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".RecipeItemActivity" />
+        <activity android:name=".Activity_RecipeItem" />
 
-        <activity android:name=".DetailedStepsActivity"
+        <activity android:name=".Activity_Detailed_Steps"
             android:label="@string/detailed_step_title"
             android:launchMode="singleTop"
-            android:parentActivityName=".RecipeListActivity">
+            android:parentActivityName=".Activity_RecipeList">
         </activity>
 
         <receiver android:name=".BakingWidgetProvider">

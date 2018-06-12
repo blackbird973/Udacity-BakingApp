@@ -14,11 +14,11 @@ import java.util.List;
  * Created by Yohan on 21/05/2018.
  */
 
-public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.IngredientsViewHolder>  {
+public class Adapter_Ingredients extends RecyclerView.Adapter<Adapter_Ingredients.IngredientsViewHolder>  {
     private List<Ingredients> ingredientsList;
     private final Context mContext;
 
-    public IngredientsAdapter(Context context){
+    public Adapter_Ingredients(Context context){
         ingredientsList = new ArrayList<>();
         mContext = context;
     }
@@ -30,7 +30,7 @@ public class IngredientsAdapter extends RecyclerView.Adapter<IngredientsAdapter.
 
     @Override
     public IngredientsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.ingredients_item, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_ingredients, parent, false);
         return new IngredientsViewHolder(view);
     }
 

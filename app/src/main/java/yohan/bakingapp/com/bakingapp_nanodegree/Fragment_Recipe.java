@@ -4,12 +4,8 @@ package yohan.bakingapp.com.bakingapp_nanodegree;
  * Created by Yohan on 20/05/2018.
  */
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
-import yohan.bakingapp.com.bakingapp_nanodegree.R;
-
-
 
 
 import android.os.Handler;
@@ -20,13 +16,10 @@ import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import yohan.bakingapp.com.bakingapp_nanodegree.RecipeApi.RecipesApi;
+import yohan.bakingapp.com.bakingapp_nanodegree.Api_Recipe.RecipesApi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
-import yohan.bakingapp.com.bakingapp_nanodegree.Recipe;
-import yohan.bakingapp.com.bakingapp_nanodegree.RecipeItemActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,11 +30,11 @@ import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 
-public class RecipeFragment extends Fragment implements RecipeAdapter.RecipeClickListener {
+public class Fragment_Recipe extends Fragment implements Adapter_Recipe.RecipeClickListener {
 
     private RecipesApi service;
     private RecyclerView recyclerView;
-    private RecipeAdapter recipeAdapter;
+    private Adapter_Recipe adapterRecipe;
     private GridLayoutManager layoutManager;
     private final String KEY_RECYCLER_STATE = "recycler_state";
     private static Bundle mBundleRecyclerViewState;
@@ -52,16 +45,16 @@ public class RecipeFragment extends Fragment implements RecipeAdapter.RecipeClic
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_recipes, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_recipe, container, false);
 
         recyclerView = rootView.findViewById(R.id.recipe_list_recycler_view);
         layoutManager = new GridLayoutManager(getContext(), 1);
-        recipeAdapter = new RecipeAdapter(getContext(), this);
+        adapterRecipe = new Adapter_Recipe(getContext(), this);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(recipeAdapter);
+        recyclerView.setAdapter(adapterRecipe);
         List<Recipe> recipes = new ArrayList<>();
 
-        recipeAdapter.setRecipesList(recipes);
+        adapterRecipe.setRecipesList(recipes);
 
         return rootView;
     }
@@ -116,7 +109,7 @@ public class RecipeFragment extends Fragment implements RecipeAdapter.RecipeClic
         service.getRecipes(new Callback<List<Recipe>>() {
             @Override
             public void success(List<Recipe> recipeResult, Response response) {
-                recipeAdapter.setRecipesList(recipeResult);
+                adapterRecipe.setRecipesList(recipeResult);
             }
 
             @Override
@@ -135,7 +128,7 @@ public class RecipeFragment extends Fragment implements RecipeAdapter.RecipeClic
         List<Steps> steps;
         steps = recipe.getSteps();
 
-        Intent intent = new Intent(getActivity(), RecipeItemActivity.class);
+        Intent intent = new Intent(getActivity(), Activity_RecipeItem.class);
         intent.putParcelableArrayListExtra("ingredients", (ArrayList<? extends Parcelable>) ingredients);
         intent.putParcelableArrayListExtra("steps", (ArrayList<? extends Parcelable>) steps);
         startActivity(intent);

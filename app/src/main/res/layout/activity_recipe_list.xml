@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="yohan.bakingapp.com.bakingapp_nanodegree.RecipeListActivity"
+    tools:context="yohan.bakingapp.com.bakingapp_nanodegree.Activity_RecipeList"
     >
 
     <LinearLayout
@@ -14,11 +14,11 @@
 
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <fragment
             android:id="@+id/recipe_list_framelayout"
-            android:name="yohan.bakingapp.com.bakingapp_nanodegree.RecipeFragment"
+            android:name="yohan.bakingapp.com.bakingapp_nanodegree.Fragment_Recipe"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorAccent"></fragment>

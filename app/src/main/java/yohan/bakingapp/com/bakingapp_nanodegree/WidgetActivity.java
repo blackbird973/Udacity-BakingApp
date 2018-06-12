@@ -7,10 +7,6 @@ package yohan.bakingapp.com.bakingapp_nanodegree;
 import android.appwidget.AppWidgetManager;
 import android.content.Intent;
 import android.content.res.Configuration;
-import yohan.bakingapp.com.bakingapp_nanodegree.RecipeAdapter;
-import yohan.bakingapp.com.bakingapp_nanodegree.RecipeApi;
-import yohan.bakingapp.com.bakingapp_nanodegree.Ingredients;
-import yohan.bakingapp.com.bakingapp_nanodegree.Recipe;
 import android.os.Handler;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
@@ -27,11 +23,11 @@ import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
-public class WidgetActivity extends AppCompatActivity implements RecipeAdapter.RecipeClickListener {
-    private RecipeApi.RecipesApi service;
+public class WidgetActivity extends AppCompatActivity implements Adapter_Recipe.RecipeClickListener {
+    private Api_Recipe.RecipesApi service;
 
     private RecyclerView recyclerView;
-    private RecipeAdapter recipeAdapter;
+    private Adapter_Recipe adapterRecipe;
     private GridLayoutManager layoutManager;
     private final String KEY_RECYCLER_STATE = "recycler_state";
     private static Bundle mBundleRecyclerViewState;
@@ -44,27 +40,27 @@ public class WidgetActivity extends AppCompatActivity implements RecipeAdapter.R
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setResult(RESULT_CANCELED);
-        setContentView(R.layout.activity_widget);
+        setContentView(R.layout.widget_activity);
 
         recyclerView = findViewById(R.id.recipe_list_recycler_view_widget);
         layoutManager = new GridLayoutManager(this, 1);
-        recipeAdapter = new RecipeAdapter(this, this);
+        adapterRecipe = new Adapter_Recipe(this, this);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(recipeAdapter);
+        recyclerView.setAdapter(adapterRecipe);
         List<Recipe> recipes = new ArrayList<>();
 
-        recipeAdapter.setRecipesList(recipes);
+        adapterRecipe.setRecipesList(recipes);
 
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint("https://d17h27t6h515a5.cloudfront.net")
                 .setLogLevel(RestAdapter.LogLevel.FULL)
                 .build();
 
-        service = restAdapter.create(RecipeApi.RecipesApi.class);
+        service = restAdapter.create(Api_Recipe.RecipesApi.class);
         showRecipes();
 
         widgetManager = AppWidgetManager.getInstance(this);
-        views = new RemoteViews(this.getPackageName(), R.layout.baking_widget_provider);
+        views = new RemoteViews(this.getPackageName(), R.layout.widget_provider);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -112,7 +108,7 @@ public class WidgetActivity extends AppCompatActivity implements RecipeAdapter.R
         service.getRecipes(new Callback<List<Recipe>>() {
             @Override
             public void success(List<Recipe> recipeResult, Response response) {
-                recipeAdapter.setRecipesList(recipeResult);
+                adapterRecipe.setRecipesList(recipeResult);
             }
 
             @Override
