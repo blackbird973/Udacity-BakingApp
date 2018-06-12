@@ -94,9 +94,9 @@ public class Activity_RecipeItem extends AppCompatActivity {
             new AlertDialog.Builder(this)
                     .setTitle(R.string.no_internet_text)
                     .setCancelable(false)
-                    .setMessage("Oops, the internet connection was lost, please try again by clicking on the button")
+                    .setMessage(R.string.title_no_internet)
                     .setIcon(R.drawable.ic_signal_cellular_connected_no_internet_0_bar_black_24dp)
-                    .setPositiveButton("Go to Connection Settings", new DialogInterface.OnClickListener() {
+                    .setPositiveButton(R.string.go_to_settings, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
 
                             Intent intent = new Intent(Settings.ACTION_WIRELESS_SETTINGS);

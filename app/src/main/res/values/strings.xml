@@ -10,4 +10,6 @@
     <string name="no_images_available">No images available</string>
     <string name="recipe_image">Image of Recipe item</string>
     <string name="error_data">Error getting recipe data!</string>
+    <string name="title_no_internet">Oops, internet signal was lost, please try again</string>
+    <string name="go_to_settings">Open the Settings</string>
 </resources>
