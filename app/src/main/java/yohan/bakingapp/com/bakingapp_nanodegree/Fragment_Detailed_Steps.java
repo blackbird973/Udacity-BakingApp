@@ -162,7 +162,16 @@ public class Fragment_Detailed_Steps extends Fragment{
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+        saveState();
         outState.putLong(PLAYBACK_POSITION, playbackPosition);
         outState.putBoolean(PLAY_WHEN_READY, playWhenReady);
+    }
+
+    private void saveState() {
+        if (player != null){
+            playbackPosition = player.getContentPosition();
+            playWhenReady = player.getPlayWhenReady();
+
+        }
     }
 }

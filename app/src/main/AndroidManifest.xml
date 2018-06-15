@@ -21,7 +21,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Activity_RecipeItem" />
+        <activity android:name=".Activity_RecipeItem"
+            android:label="@string/detailed_step_title"
+            android:launchMode="singleTop"
+            android:parentActivityName=".Activity_RecipeList"/>
 
         <activity android:name=".Activity_Detailed_Steps"
             android:label="@string/detailed_step_title"
